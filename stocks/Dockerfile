@@ -31,14 +31,19 @@ ENV TZ="America/Salt Lake City"
 
 RUN apt-get -y update && apt-get -y install \
    apt-utils \
-   emacs-nox \
-   git \
-   g++ \
    python3 \
-   python3-pip
+   python3-pip \
+   curl \
+   unzip
+   
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+unzip awscliv2.zip && \
+./aws/install
+
+
    
 RUN pip3 install finnhub-python \
-    pandas
+boto3
    
 RUN mkdir cs3505
 
