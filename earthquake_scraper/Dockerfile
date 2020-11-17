@@ -43,5 +43,5 @@ RUN apt-get -y update && apt-get -y install python3.8 python3-pip && pip3 instal
 COPY . /scraping
 
 # Runs program tha collects our data from the web
-RUN python3 scraping/scraper.py
+CMD python3 scraping/scraper.py
 
